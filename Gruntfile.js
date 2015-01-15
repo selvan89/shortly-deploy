@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: [
+      files: ['../shortly-deploy/.*js'
         // Add filespec list here
       ],
       options: {
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
   ]);
 
-  grunt.registerTask('default', ['concat', 'uglify']);
+  grunt.registerTask('default', ['concat', 'uglify', 'jshint', 'mochaTest']);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
